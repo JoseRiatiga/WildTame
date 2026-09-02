@@ -26,13 +26,13 @@ A fully customizable pet-taming and progression plugin for Paper servers. Tame w
 - Paper 1.21.x (or a Paper fork like Purpur/Pufferfish) — not compatible with vanilla Spigot or Folia
 - Java 21
 
-## Building
+## Downloads
 
-```
-./gradlew build
-```
+Compiled releases are published on [Modrinth](https://modrinth.com).
 
-The compiled jar is written to `build/libs/`.
+## Contributing
+
+Found a bug or want to add a feature? Issues and pull requests are welcome. To build from source: `./gradlew build` (jar output in `build/libs/`).
 
 ## License
 
