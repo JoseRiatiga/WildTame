@@ -14,17 +14,40 @@ A fully customizable pet-taming and progression plugin for Paper servers. Tame w
 - **Config-driven balance** — level cap, XP rates, cooldowns, ability unlock levels, and every attribute bonus are all set in `config.yml`, reloadable with `/wildtame admin reload`.
 - **PlaceholderAPI support**, automatic `pets.yml` backups, and a ghost-pet cleanup command for admins.
 
-## Commands
-
-- `/wildtame` (alias `/wt`) — command summary
-- `/wildtame menu` — the main hub (also where you store/summon pets)
-- `/wildtame info`, `llamar`, `renombrar`, `top`
-- `/wildtame admin reload|nivel|limpiar` — admin tools
-
 ## Requirements
 
-- Paper 1.21.x (or a Paper fork like Purpur/Pufferfish) — not compatible with vanilla Spigot or Folia
-- Java 21
+| Requirement | Value |
+|---|---|
+| Server software | Paper (or a fork such as Purpur/Pufferfish) — **not** vanilla Spigot or Folia |
+| Minecraft version | 1.21.x |
+| Java | 21 |
+| Optional dependency | [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) — enables `%wildtame_*%` placeholders |
+
+## Commands
+
+| Command | Description |
+|---|---|
+| `/wildtame` (alias `/wt`) | Shows a quick command summary in chat |
+| `/wildtame menu` | Opens the main hub — browse, summon, and store your pets |
+| `/wildtame info` | Opens your active pet's panel |
+| `/wildtame llamar` | Teleports your active pet to you |
+| `/wildtame renombrar <name>` | Renames your active pet |
+| `/wildtame top` | Shows the global pet leaderboard |
+| `/wildtame admin reload` | Reloads `config.yml` and the language files |
+| `/wildtame admin nivel <player> <pet> <level>` | Sets a specific pet's level |
+| `/wildtame admin limpiar` | Removes desynced ghost pet entities |
+
+## Permissions
+
+| Node | Default | Description |
+|---|---|---|
+| `wildtame.user` | `true` | Use the normal pet commands (info, llamar, renombrar, menu, top) |
+| `wildtame.admin.collar` | `op` | Receive the Taming Collar from the Admin Panel |
+| `wildtame.admin.golosina` | `op` | Receive Pet Treats from the Admin Panel |
+| `wildtame.admin.nivel` | `op` | Set a player's active pet level (`/wildtame admin nivel`) |
+| `wildtame.admin.reload` | `op` | Reload `config.yml` and the languages (`/wildtame admin reload`) |
+| `wildtame.admin.limpiar` | `op` | Remove desynced ghost pets (`/wildtame admin limpiar`) |
+| `wildtame.admin.*` | `op` | Grants all of the admin permissions above |
 
 ## Downloads
 
