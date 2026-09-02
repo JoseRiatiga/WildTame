@@ -1,0 +1,40 @@
+name: WildTame
+version: '1.0.0'
+main: com.example.wildtame.WildTame
+api-version: '1.21'
+author: Lord_Shadow_HF
+description: Sistema de mascotas personalizable - domestica, entrena y evoluciona compañeros salvajes.
+softdepend: [PlaceholderAPI]
+commands:
+  wildtame:
+    description: Gestiona tu mascota.
+    usage: "/<command> <info|llamar|renombrar <nombre>|menu|top> §7(admin: /wildtame admin <reload|nivel|limpiar>)"
+    aliases: [wt]
+permissions:
+  wildtame.user:
+    description: Permite usar los comandos normales de mascotas (info, llamar, renombrar, menu, top).
+    default: true
+  wildtame.admin.collar:
+    description: Permite recibir el Collar de Domesticación desde el Panel de Admin del menú.
+    default: op
+  wildtame.admin.nivel:
+    description: Permite fijar el nivel de la mascota activa de un jugador (/wildtame admin nivel).
+    default: op
+  wildtame.admin.reload:
+    description: Permite recargar config.yml sin reiniciar el servidor (/wildtame admin reload).
+    default: op
+  wildtame.admin.golosina:
+    description: Permite recibir Golosinas de Mascota desde el Panel de Admin del menú.
+    default: op
+  wildtame.admin.limpiar:
+    description: Permite limpiar mascotas "fantasma" (entidades desincronizadas del registro) con /wildtame admin limpiar.
+    default: op
+  wildtame.admin.*:
+    description: Otorga todos los permisos de administrador del plugin.
+    default: op
+    children:
+      wildtame.admin.collar: true
+      wildtame.admin.nivel: true
+      wildtame.admin.reload: true
+      wildtame.admin.golosina: true
+      wildtame.admin.limpiar: true

@@ -1,0 +1,149 @@
+# Configuración de balance de WildTame.
+# Cambia lo que quieras y usa /wildtame admin reload (permiso wildtame.admin.*) para
+# aplicarlo sin reiniciar el servidor. Los valores de acá abajo son los que ya vienen probados.
+
+# Idioma del plugin: "es" (español) o "en" (English) vienen incluidos, dentro de la carpeta
+# lang/. También puedes crear tu propio lang/<codigo>.yml (copiando uno de los dos
+# existentes) y poner ese código acá.
+language: es
+
+max-level: 50
+
+xp:
+  per-treat: 10
+  per-kill-assist: 8
+  combat-assist-range: 10
+
+hunger:
+  decay-per-tick: 0.5
+  starving-penalty-factor: -0.25
+
+cooldowns:
+  call-seconds: 60
+  revive-minutes: 10
+
+# Ítem base del Collar de Domesticación y la Golosina de Mascota (cualquier Material de
+# Bukkit/Minecraft, en mayúsculas — ej. LEAD, SWEET_BERRIES, BONE). El nombre/lore de cada
+# uno se sigue traduciendo aparte en lang/<idioma>.yml.
+items:
+  collar-material: LEAD
+  treat-material: SWEET_BERRIES
+
+# Copias de seguridad de pets.yml, para poder volver atrás si algo se corrompe o se borra
+# por error (la escritura ya es atómica, esto es una red de seguridad aparte, contra errores
+# lógicos, no contra caídas del proceso). Cambiar interval-minutes requiere reiniciar el
+# servidor para tomar efecto; keep sí se aplica al instante con /wildtame admin reload.
+backups:
+  enabled: true
+  interval-minutes: 60
+  keep: 24
+
+abilities:
+  evolution-level: 10
+  aoe-level: 10
+  growl-level: 15
+  aura-level: 5
+  aura-tier2-level: 30
+  cat-dodge-level: 10
+  cat-dodge-min-chance: 0.10
+  cat-dodge-max-chance: 0.30
+  llama-taunt-level: 20
+  parrot-alert-level: 10
+
+# Bonos totales de cada atributo entre nivel 1 y max-level, por tipo de mascota.
+# flying-speed solo aplica al loro; jump solo a los montables dirigibles (caballo/burro/mula).
+attribute-bonuses:
+  WOLF:
+    health: 30
+    damage: 6
+    speed: 0.06
+    flying-speed: 0
+    jump: 0
+  CAT:
+    health: 20
+    damage: 0
+    speed: 0.08
+    flying-speed: 0
+    jump: 0
+  PARROT:
+    health: 14
+    damage: 0
+    speed: 0
+    flying-speed: 0.6
+    jump: 0
+  HORSE:
+    health: 25
+    damage: 0
+    speed: 0.20
+    flying-speed: 0
+    jump: 0.8
+  DONKEY:
+    health: 30
+    damage: 0
+    speed: 0.15
+    flying-speed: 0
+    jump: 0.6
+  MULE:
+    health: 30
+    damage: 0
+    speed: 0.15
+    flying-speed: 0
+    jump: 0.6
+  LLAMA:
+    health: 35
+    damage: 0
+    speed: 0.03
+    flying-speed: 0
+    jump: 0
+
+# Íconos custom-head (opcional) para los botones de navegación del menú (el hub, la lista de
+# mascotas y el panel de admin) — NO para las mascotas en sí, esas siguen usando su material
+# normal porque representan al animal real. Para cambiar un botón: entra a
+# https://minecraft-heads.com/, abre la cabeza que quieras, pestaña "For Developers" y copia
+# el campo "Value" (un texto largo en base64) acá abajo, entre comillas. Deja la clave vacía
+# ("") para que ese botón siga usando su ítem normal de Minecraft — así no hace falta llenar
+# todas de una vez. Pon enabled: false para desactivar los custom-heads del todo y que cada
+# botón use su ítem vanilla normal, sin importar lo que tengan las claves de abajo. Aplica con
+# /wildtame admin reload sin reiniciar el servidor.
+menu-icons:
+  enabled: true
+  hub-my-pets: ""
+  hub-ranking: ""
+  hub-stats: ""
+  hub-help: ""
+  hub-admin: ""
+  back: ""
+  stats-header: ""
+  stats-total: ""
+  stats-active: ""
+  stats-stored: ""
+  stats-dead: ""
+  stats-best: ""
+  stats-level-sum: ""
+  help-header: ""
+  help-info: ""
+  help-llamar: ""
+  help-renombrar: ""
+  help-menu: ""
+  help-top: ""
+  help-nivel: ""
+  help-reload: ""
+  help-limpiar: ""
+  admin-info: ""
+  admin-reload: ""
+  admin-collar: ""
+  admin-treat: ""
+  ranking-empty: ""
+  prev-page: ""
+  next-page: ""
+  filter-status: ""
+  filter-type: ""
+  sort: ""
+  list-info: ""
+  no-matches: ""
+  pet-rename: ""
+  pet-inventory: ""
+  pet-store: ""
+  pet-release: ""
+  release-confirm-yes: ""
+  release-confirm-no: ""
