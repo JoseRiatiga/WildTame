@@ -1,0 +1,335 @@
+# Todos los textos del plugin: títulos de menú, nombres/lore de ítems y mensajes de chat.
+# Traduce o cambia lo que quieras y usa /wildtame admin reload para aplicarlo sin reiniciar el
+# servidor. Los colores se escriben con & (ej. &a = verde) y los placeholders van entre
+# %porcentajes% — no borres los que aparezcan en el texto original, son datos reales
+# (nombre de la mascota, nivel, tiempo, etc.) que el plugin rellena.
+#
+# Este es el idioma español (lang/es.yml). También existe lang/en.yml (inglés). Cuál se usa
+# se elige con "language: es" (o "en") en config.yml. Puedes crear tu propio idioma copiando
+# este archivo a lang/<codigo>.yml y apuntando "language" a ese código.
+
+nameplate:
+  # El letrero flotante que aparece sobre la cabeza de la mascota.
+  evolved-prefix: "★ "
+  format: "%evolved%&8[&aNv. %level%&8] &f%name% %health-icon% %hunger-icon%"
+  health-icon-high: "&a♥ %percent%%"
+  health-icon-mid: "&e♥ %percent%%"
+  health-icon-low: "&c♥ %percent%%"
+  hunger-icon-high: "&a■ %percent%%"
+  hunger-icon-mid: "&e■ %percent%%"
+  hunger-icon-low: "&c■ %percent%%"
+  # Nombre que se ve en los menús (item del inventario), sin colores propios — el menú le
+  # pone su propio color por delante.
+  display-name-format: "%evolved%%name% [Nv. %level%]"
+
+gui:
+  pet:
+    title: "&8Tu Mascota"
+    rename-button-name: "&eRenombrar"
+    rename-button-lore:
+      - "&7Cambia el nombre de tu mascota"
+    inventory-button-name: "&6Inventario"
+    inventory-button-lore:
+      - "&7%capacity% espacios (crece con el nivel)"
+    store-button-name: "&eGuardar mascota"
+    store-button-lore:
+      - "&7Guarda a tu mascota activa"
+      - "&7conservando su progreso"
+    release-button-name: "&cLiberar mascota"
+    release-button-lore:
+      - "&7Dejará de ser tuya para siempre."
+      - "&7Debe estar afuera contigo."
+    call-active-name: "&aLlamar mascota"
+    call-active-lore:
+      - "&7Teletranspórtala hacia ti"
+    call-revive-ready-name: "&aRevivir mascota"
+    call-revive-ready-lore:
+      - "&7Tráela de vuelta"
+    call-revive-waiting-name: "&4Reviviendo..."
+    call-revive-waiting-lore:
+      - "&7Espera %time%"
+    call-summon-name: "&aSacar mascota"
+    call-summon-lore:
+      - "&7Actívala y tráela contigo"
+    status-active: "&a● Afuera contigo"
+    status-dead-ready: "&c● Puedes revivirla ahora"
+    status-dead-waiting: "&4● Reviviendo..."
+    status-saved: "&7● Guardada"
+    health-line-known: "&7Vida: &f%current%/%max%"
+    health-line-unknown: "&7Vida: &fdesconocida (fuera de rango)"
+    health-line-dead-ready: "&cHa muerto — ¡ya puedes revivirla!"
+    health-line-dead-waiting: "&4Ha muerto — revive en %time%"
+    lore-type: "&7Tipo: &f%type%"
+    lore-level: "&7Nivel: &f%level%%max-suffix%"
+    lore-level-max-suffix: " &6(MÁX)"
+    lore-xp: "&7XP: &f%xp%"
+    lore-xp-max: "&6MÁX"
+    lore-hunger: "&7Hambre: &f%hunger%/100%starving-suffix%"
+    lore-hunger-starving-suffix: " &c(¡hambrienta!)"
+    release-confirm-title: "&c¿Liberar a %name%?"
+    release-confirm-lore:
+      - "&7Perderá su dueño y desaparecerá"
+      - "&7de tu registro de mascotas."
+      - "&4¡Esta acción no se puede deshacer!"
+    release-confirm-yes-name: "&aSí, liberarla"
+    release-confirm-yes-lore:
+      - "&7Confirmar liberación"
+    release-confirm-no-name: "&cCancelar"
+    release-confirm-no-lore:
+      - "&7Volver atrás"
+  hub:
+    title: "&8Menú Principal"
+    back-name: "&7« Volver"
+    back-lore:
+      - "&7Volver al menú principal"
+    my-pets-name: "&aMis Mascotas"
+    my-pets-lore:
+      - "&7Ver y gestionar tus mascotas"
+    ranking-name: "&6Ranking"
+    ranking-lore:
+      - "&7Top mascotas del servidor por nivel"
+    stats-name: "&bMis Estadísticas"
+    stats-lore:
+      - "&7Resumen de tu progreso"
+    help-name: "&eAyuda"
+    help-lore:
+      - "&7Lista de comandos"
+    admin-name: "&cPanel de Admin"
+    admin-lore:
+      - "&7Idioma, totales y recarga"
+  stats:
+    title: "&8Tus estadísticas"
+    item-name: "&bTus estadísticas"
+    no-pets-lore:
+      - "&7Todavía no tienes mascotas."
+    header-name: "&b&lEstadísticas de %player%"
+    header-lore:
+      - "&7Un vistazo a todo tu progreso"
+      - "&7como domador de mascotas."
+    total-name: "&b&lMascotas totales: &f%total%"
+    total-lore:
+      - "&7Todas las que has domesticado"
+      - "&7alguna vez, sin importar su estado."
+    active-none: "&7Ninguna"
+    active-level-suffix: " &7(Nv. %level%)"
+    active-name: "&a&lActiva: &f%active%%active-level-suffix%"
+    active-lore:
+      - "&7La mascota que tienes"
+      - "&7afuera contigo ahora mismo."
+    stored-name: "&7&lGuardadas: &f%stored%"
+    stored-lore:
+      - "&7Mascotas guardadas, listas"
+      - "&7para invocarse cuando quieras."
+    dead-name: "&4&lMuertas: &f%dead%"
+    dead-lore:
+      - "&7Mascotas caídas en combate,"
+      - "&7esperando poder revivir."
+    best-pet-name: "&6&lMejor mascota"
+    best-pet-lore:
+      - "&7%best-name% &8• &7Nv. %best-level%"
+    level-sum-name: "&e&lSuma de niveles: &f%level-sum%"
+    level-sum-lore:
+      - "&7La suma de todos los niveles"
+      - "&7de tus mascotas juntas."
+  help:
+    header-name: "&e&lComandos de WildTame"
+    header-lore:
+      - "&7Todo lo que puedes hacer"
+      - "&7con tus mascotas."
+    info-name: "&6&l/wildtame info"
+    info-lore:
+      - "&7Abre el panel de tu"
+      - "&7mascota activa."
+    llamar-name: "&6&l/wildtame llamar"
+    llamar-lore:
+      - "&7Teletransporta tu mascota"
+      - "&7activa hacia ti."
+    renombrar-name: "&6&l/wildtame renombrar"
+    renombrar-lore:
+      - "&7Uso: /wildtame renombrar <nombre>"
+      - "&7Cambia el nombre de tu"
+      - "&7mascota activa."
+    menu-name: "&6&l/wildtame menu"
+    menu-lore:
+      - "&7Invoca, guarda y gestiona"
+      - "&7todas tus mascotas."
+    top-name: "&6&l/wildtame top"
+    top-lore:
+      - "&7Muestra el ranking global"
+      - "&7de mascotas por nivel."
+    nivel-name: "&c&l/wildtame admin nivel"
+    nivel-lore:
+      - "&7Uso: <jugador> <mascota> <numero>"
+      - "&7Fija el nivel de esa mascota."
+    reload-name: "&c&l/wildtame admin reload"
+    reload-lore:
+      - "&7Recarga config.yml y los"
+      - "&7idiomas sin reiniciar."
+    limpiar-name: "&c&l/wildtame admin limpiar"
+    limpiar-lore:
+      - "&7Elimina mascotas fantasma"
+      - "&7desincronizadas."
+  admin-panel:
+    title: "&8Panel de administración"
+    item-name: "&cInfo del servidor"
+    lore:
+      - "&7Idioma activo: &f%language%"
+      - "&7Mascotas registradas: &f%total%"
+    reload-name: "&aRecargar"
+    reload-lore:
+      - "&7Aplica config.yml y messages.yml"
+      - "&7sin reiniciar el servidor"
+    collar-name: "&6Dar Collar de Domesticación"
+    collar-lore:
+      - "&7Clic para recibir uno"
+      - "&7en tu inventario"
+    treat-name: "&dDar Golosina de Mascota"
+    treat-lore:
+      - "&7Clic para recibir una"
+      - "&7en tu inventario"
+  ranking:
+    title: "&8Ranking de mascotas"
+    empty-name: "&7Sin mascotas todavía"
+    empty-lore:
+      - "&7Todavía no hay mascotas registradas."
+    entry-lore:
+      - "&7Dueño: &f%owner%"
+      - "&7Tipo: &f%type%"
+      - "&7Nivel: &f%level%%max-suffix%"
+  menu:
+    title: "&8Menú de mascotas"
+    no-pets: "&7Aún no tienes mascotas. Aliméntala (Lobo/Gato/Loro) o móntala (Caballo/Burro/Mula/Llama) hasta domesticarla."
+    status-prefix-active: "&a[Afuera] "
+    status-prefix-dead-ready: "&c[Lista para revivir] "
+    status-prefix-dead-waiting: "&4[Muerta] "
+    status-prefix-saved: "&7[Guardada] "
+    status-active: "&a● Actualmente afuera contigo"
+    status-dead-ready: "&c● Puedes revivirla ahora"
+    status-dead-waiting: "&4● Reviviendo... %time%"
+    status-saved: "&7● Guardada"
+    action-active: "&eClic izquierdo: guardarla"
+    action-dead-ready: "&eClic izquierdo: revivirla"
+    action-dead-waiting: "&7Espera a que termine el tiempo de espera"
+    action-saved: "&eClic izquierdo: invocarla"
+    action-info: "&eClic derecho: ver información"
+    lore-type: "&7Tipo: &f%type%"
+    lore-xp: "&7XP: &f%xp%"
+    lore-xp-max: "&6MÁX"
+    lore-hunger: "&7Hambre: &f%hunger%/100%starving-suffix%"
+    lore-hunger-starving-suffix: " &c(¡hambrienta!)"
+    prev-page-name: "&ePágina anterior"
+    prev-page-lore:
+      - "&7Ir a la página %page%"
+    next-page-name: "&ePágina siguiente"
+    next-page-lore:
+      - "&7Ir a la página %page%"
+    filter-status-name: "&eEstado: &f%value%"
+    filter-status-lore:
+      - "&7Clic para cambiar"
+    filter-status-all: "Todas"
+    filter-status-active: "Activa"
+    filter-status-stored: "Guardadas"
+    filter-status-dead: "Muertas"
+    filter-type-name: "&eTipo: &f%value%"
+    filter-type-lore:
+      - "&7Clic para cambiar"
+    filter-type-all: "Todos"
+    sort-name: "&eOrden: &f%value%"
+    sort-lore:
+      - "&7Clic para cambiar"
+    sort-level: "Nivel"
+    sort-alpha: "Nombre"
+    sort-xp: "XP"
+    no-matches: "&7Ninguna mascota coincide con este filtro."
+    info-name: "&6WildTame &7— Mascotas"
+    info-lore:
+      - "&7Domestica, entrena y evoluciona"
+      - "&7compañeros salvajes."
+      - ""
+      - "&7Mascotas totales: &f%total%"
+      - "&7Página: &f%page%/%total-pages%"
+  rename:
+    title: "&8Renombrar mascota"
+    invalid-name: "&cNo escribiste un nombre válido."
+  inventory:
+    title: "&8Inventario: %name%"
+
+taming:
+  collar-name: "&6Collar de Domesticación"
+  collar-lore:
+    - "&7Llévalo en tu mano secundaria"
+    - "&7para iniciar la domesticación"
+    - "&7de una mascota."
+    - "&8Sin él, la doma es 100% vanilla."
+  collar-broke: "&7Tu Collar de Domesticación se rompió tras el uso."
+  progress-bar-title: "&eDomesticando %type%..."
+
+treat:
+  name: "&dGolosina de Mascota"
+  lore:
+    - "&7Dale esto a tu mascota activa"
+    - "&7para darle &d+%amount% XP&7 directo."
+    - "&8Zanahoria dorada + hueso + moras"
+
+pet:
+  fallback-name: "tu mascota"
+  ready-to-revive-on-join: "&a%name% ya puede revivir — ábrela desde /wildtame menu."
+  already-have-active: "&cYa tienes una mascota activa. Guárdala primero desde /wildtame menu."
+  tamed: "&a¡Has domesticado a %name%!"
+  no-pets-registered: "&7Todavía no hay mascotas registradas."
+  top-header: "&6&lTop %limit% mascotas &7(por nivel)"
+  top-entry: "%rank% &f%name%%evolved-mark% &7(%type%) &7de &f%owner% &b— Nv. %level%%max-suffix%"
+  top-evolved-mark: " &d★"
+  top-max-suffix: " &6(MÁX)"
+  leveled-up: "&b¡Tu mascota %name% subió a nivel %level%!"
+  max-level-reached: "&6&l¡%name% alcanzó el nivel máximo (%max-level%)!"
+  fed: "&7Alimentaste a %name%."
+  already-max-level: "&7%name% ya está en el nivel máximo (%max-level%)."
+  treat-given: "&dLe diste una golosina a %name%. (+%amount% XP)"
+  parrot-alert: "&c⚠ &f%name% &7detecta un mob hostil cerca"
+  no-active-pet-to-store: "&cNo tienes una mascota activa."
+  stored: "&7Has guardado a %name%. Usa /wildtame menu para recuperarla."
+  no-pets-stored: "&cNo tienes mascotas guardadas."
+  not-found-by-name: "&cNo tienes ninguna mascota guardada con ese nombre. Usa /wildtame menu para verlas."
+  still-reviving: "&cTodavía se está reviviendo. Espera %time%."
+  could-not-summon: "&cNo se pudo sacar a tu mascota."
+  revived: "&a¡%name% ha revivido!"
+  summoned: "&a¡%name% ha vuelto!"
+  no-active-pet-to-release: "&cNo tienes una mascota activa para liberar."
+  released: "&7Has liberado a %name%. Ya no es tu mascota."
+  died: "&c¡Tu mascota %name% ha muerto! Podrás revivirla en %time% desde /wildtame menu."
+  name-taken: "&cYa tienes otra mascota llamada %name%. Elige un nombre distinto."
+  renamed: "&aTu mascota ahora se llama %name%."
+  call-cooldown: "&cDebes esperar %seconds%s antes de volver a llamar a tu mascota."
+  world-not-found: "&cNo se pudo encontrar el mundo de tu mascota."
+  call-success: "&a¡Tu mascota ha vuelto!"
+  call-not-found: "&cNo se pudo localizar a tu mascota. Puede que se haya perdido."
+  no-chest-allowed: "&cEsta mascota no lleva cofre — usa su inventario propio (agachado + clic derecho)."
+
+command:
+  no-permission: "&cNo tienes permiso para usar este comando."
+  players-only: "Este comando solo puede usarse en el juego."
+  no-active-pet-hint: "&cAún no tienes una mascota activa. Pídele a un admin el Collar de Domesticación."
+  usage-admin: "&7Uso: /wildtame admin <reload|nivel|limpiar>"
+  usage-level: "&7Uso: /wildtame admin nivel <jugador> <nombreMascota> <numero>"
+  usage-rename: "&7Uso: /wildtame renombrar <nombre>"
+  unknown-subcommand: "&cSubcomando desconocido."
+  reload-done: "&aconfig.yml y messages.yml recargados — los cambios ya están activos."
+  player-not-found: "&cJugador no encontrado o desconectado."
+  admin-received-collar: "&aRecibiste un &6Collar de Domesticación&a en tu inventario."
+  admin-received-treat: "&aRecibiste una &dGolosina de Mascota&a en tu inventario."
+  admin-no-space: "&cNo tienes espacio en el inventario."
+  cleanup-done: "&aSe eliminaron %count% mascota(s) fantasma."
+  level-not-a-number: "&cEl nivel debe ser un número."
+  pet-not-found-for-level: "&c%player% no tiene ninguna mascota (activa o guardada) con ese nombre."
+  level-set-admin: "&aPusiste a %pet% (de %player%) en nivel %level%."
+  level-set-target: "&b¡Tu mascota %pet% ahora está en nivel %level%! (ajustado por un admin)"
+  help-title: "&6&lWildTame &7- Comandos"
+  help-main-line: "&7Comando principal: &e/wt menu"
+  help-info-line: "&e/wt info &8- &7Panel de tu mascota activa"
+  help-llamar-line: "&e/wt llamar &8- &7Teletransporta tu mascota activa hacia ti"
+  help-renombrar-line: "&e/wt renombrar <nombre> &8- &7Cambia el nombre de tu mascota activa"
+  help-top-line: "&e/wt top &8- &7Ranking global de mascotas"
+  help-admin-reload-line: "&c/wt admin reload &8- &7Recarga config.yml y los idiomas"
+  help-admin-nivel-line: "&c/wt admin nivel <jugador> <mascota> <nivel> &8- &7Fija el nivel de esa mascota"
+  help-admin-limpiar-line: "&c/wt admin limpiar &8- &7Elimina mascotas fantasma"

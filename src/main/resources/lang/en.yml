@@ -1,0 +1,334 @@
+# All of the plugin's text: menu titles, item names/lore and chat messages.
+# Translate or change whatever you want and use /wildtame admin reload to apply it without
+# restarting the server. Colors use & (e.g. &a = green) and placeholders go between
+# %percent-signs% — don't remove the ones that appear in the original text, they're real
+# data (pet name, level, time, etc.) the plugin fills in.
+#
+# This is the English language file (lang/en.yml). lang/es.yml (Spanish) also exists. Which
+# one is used is picked with "language: en" (or "es") in config.yml. You can make your own
+# language by copying this file to lang/<code>.yml and pointing "language" at that code.
+
+nameplate:
+  # The floating nametag that appears above the pet's head.
+  evolved-prefix: "★ "
+  format: "%evolved%&8[&aLv. %level%&8] &f%name% %health-icon% %hunger-icon%"
+  health-icon-high: "&a♥ %percent%%"
+  health-icon-mid: "&e♥ %percent%%"
+  health-icon-low: "&c♥ %percent%%"
+  hunger-icon-high: "&a■ %percent%%"
+  hunger-icon-mid: "&e■ %percent%%"
+  hunger-icon-low: "&c■ %percent%%"
+  # Name shown in menus (inventory item), no color of its own — the menu adds its own
+  # color in front of it.
+  display-name-format: "%evolved%%name% [Lv. %level%]"
+
+gui:
+  pet:
+    title: "&8Your Pet"
+    rename-button-name: "&eRename"
+    rename-button-lore:
+      - "&7Change your pet's name"
+    inventory-button-name: "&6Inventory"
+    inventory-button-lore:
+      - "&7%capacity% slots (grows with level)"
+    store-button-name: "&eStore pet"
+    store-button-lore:
+      - "&7Stores your active pet"
+      - "&7keeping its progress"
+    release-button-name: "&cRelease pet"
+    release-button-lore:
+      - "&7It will stop being yours forever."
+      - "&7Must be out with you."
+    call-active-name: "&aCall pet"
+    call-active-lore:
+      - "&7Teleport it to you"
+    call-revive-ready-name: "&aRevive pet"
+    call-revive-ready-lore:
+      - "&7Bring it back"
+    call-revive-waiting-name: "&4Reviving..."
+    call-revive-waiting-lore:
+      - "&7Wait %time%"
+    call-summon-name: "&aSummon pet"
+    call-summon-lore:
+      - "&7Activate it and bring it with you"
+    status-active: "&a● Out with you"
+    status-dead-ready: "&c● You can revive it now"
+    status-dead-waiting: "&4● Reviving..."
+    status-saved: "&7● Stored"
+    health-line-known: "&7Health: &f%current%/%max%"
+    health-line-unknown: "&7Health: &funknown (out of range)"
+    health-line-dead-ready: "&cIt died — you can revive it now!"
+    health-line-dead-waiting: "&4It died — revives in %time%"
+    lore-type: "&7Type: &f%type%"
+    lore-level: "&7Level: &f%level%%max-suffix%"
+    lore-level-max-suffix: " &6(MAX)"
+    lore-xp: "&7XP: &f%xp%"
+    lore-xp-max: "&6MAX"
+    lore-hunger: "&7Hunger: &f%hunger%/100%starving-suffix%"
+    lore-hunger-starving-suffix: " &c(starving!)"
+    release-confirm-title: "&cRelease %name%?"
+    release-confirm-lore:
+      - "&7It will lose its owner and"
+      - "&7disappear from your pet registry."
+      - "&4This action cannot be undone!"
+    release-confirm-yes-name: "&aYes, release it"
+    release-confirm-yes-lore:
+      - "&7Confirm release"
+    release-confirm-no-name: "&cCancel"
+    release-confirm-no-lore:
+      - "&7Go back"
+  hub:
+    title: "&8Main Menu"
+    back-name: "&7« Back"
+    back-lore:
+      - "&7Back to the main menu"
+    my-pets-name: "&aMy Pets"
+    my-pets-lore:
+      - "&7View and manage your pets"
+    ranking-name: "&6Leaderboard"
+    ranking-lore:
+      - "&7Top pets on the server by level"
+    stats-name: "&bMy Stats"
+    stats-lore:
+      - "&7Summary of your progress"
+    help-name: "&eHelp"
+    help-lore:
+      - "&7List of commands"
+    admin-name: "&cAdmin Panel"
+    admin-lore:
+      - "&7Language, totals and reload"
+  stats:
+    title: "&8Your stats"
+    item-name: "&bYour stats"
+    no-pets-lore:
+      - "&7You don't have any pets yet."
+    header-name: "&b&l%player%'s Stats"
+    header-lore:
+      - "&7A look at all your progress"
+      - "&7as a pet tamer."
+    total-name: "&b&lTotal pets: &f%total%"
+    total-lore:
+      - "&7Every pet you've ever"
+      - "&7tamed, no matter its state."
+    active-none: "&7None"
+    active-level-suffix: " &7(Lv. %level%)"
+    active-name: "&a&lActive: &f%active%%active-level-suffix%"
+    active-lore:
+      - "&7The pet that's out"
+      - "&7with you right now."
+    stored-name: "&7&lStored: &f%stored%"
+    stored-lore:
+      - "&7Stored pets, ready to"
+      - "&7be summoned whenever."
+    dead-name: "&4&lDead: &f%dead%"
+    dead-lore:
+      - "&7Pets fallen in battle,"
+      - "&7waiting to be revived."
+    best-pet-name: "&6&lBest pet"
+    best-pet-lore:
+      - "&7%best-name% &8• &7Lv. %best-level%"
+    level-sum-name: "&e&lLevel sum: &f%level-sum%"
+    level-sum-lore:
+      - "&7The sum of every level"
+      - "&7across all your pets."
+  help:
+    header-name: "&e&lWildTame Commands"
+    header-lore:
+      - "&7Everything you can do"
+      - "&7with your pets."
+    info-name: "&6&l/wildtame info"
+    info-lore:
+      - "&7Opens your active"
+      - "&7pet's panel."
+    llamar-name: "&6&l/wildtame llamar"
+    llamar-lore:
+      - "&7Teleports your active"
+      - "&7pet to you."
+    renombrar-name: "&6&l/wildtame renombrar"
+    renombrar-lore:
+      - "&7Usage: /wildtame renombrar <name>"
+      - "&7Renames your active pet."
+    menu-name: "&6&l/wildtame menu"
+    menu-lore:
+      - "&7Summon, store and manage"
+      - "&7all your pets."
+    top-name: "&6&l/wildtame top"
+    top-lore:
+      - "&7Shows the global pet"
+      - "&7leaderboard by level."
+    nivel-name: "&c&l/wildtame admin nivel"
+    nivel-lore:
+      - "&7Usage: <player> <pet> <number>"
+      - "&7Sets that pet's level."
+    reload-name: "&c&l/wildtame admin reload"
+    reload-lore:
+      - "&7Reloads config.yml and the"
+      - "&7languages without restarting."
+    limpiar-name: "&c&l/wildtame admin limpiar"
+    limpiar-lore:
+      - "&7Removes desynced"
+      - "&7ghost pets."
+  admin-panel:
+    title: "&8Admin panel"
+    item-name: "&cServer info"
+    lore:
+      - "&7Active language: &f%language%"
+      - "&7Registered pets: &f%total%"
+    reload-name: "&aReload"
+    reload-lore:
+      - "&7Applies config.yml and messages.yml"
+      - "&7without restarting the server"
+    collar-name: "&6Give Taming Collar"
+    collar-lore:
+      - "&7Click to receive one"
+      - "&7in your inventory"
+    treat-name: "&dGive Pet Treat"
+    treat-lore:
+      - "&7Click to receive one"
+      - "&7in your inventory"
+  ranking:
+    title: "&8Pet leaderboard"
+    empty-name: "&7No pets yet"
+    empty-lore:
+      - "&7No pets have been registered yet."
+    entry-lore:
+      - "&7Owner: &f%owner%"
+      - "&7Type: &f%type%"
+      - "&7Level: &f%level%%max-suffix%"
+  menu:
+    title: "&8Pet Menu"
+    no-pets: "&7You don't have any pets yet. Feed it (Wolf/Cat/Parrot) or ride it (Horse/Donkey/Mule/Llama) until it's tamed."
+    status-prefix-active: "&a[Out] "
+    status-prefix-dead-ready: "&c[Ready to revive] "
+    status-prefix-dead-waiting: "&4[Dead] "
+    status-prefix-saved: "&7[Stored] "
+    status-active: "&a● Currently out with you"
+    status-dead-ready: "&c● You can revive it now"
+    status-dead-waiting: "&4● Reviving... %time%"
+    status-saved: "&7● Stored"
+    action-active: "&eLeft click: store it"
+    action-dead-ready: "&eLeft click: revive it"
+    action-dead-waiting: "&7Wait for the cooldown to finish"
+    action-saved: "&eLeft click: summon it"
+    action-info: "&eRight click: view info"
+    lore-type: "&7Type: &f%type%"
+    lore-xp: "&7XP: &f%xp%"
+    lore-xp-max: "&6MAX"
+    lore-hunger: "&7Hunger: &f%hunger%/100%starving-suffix%"
+    lore-hunger-starving-suffix: " &c(starving!)"
+    prev-page-name: "&ePrevious page"
+    prev-page-lore:
+      - "&7Go to page %page%"
+    next-page-name: "&eNext page"
+    next-page-lore:
+      - "&7Go to page %page%"
+    filter-status-name: "&eStatus: &f%value%"
+    filter-status-lore:
+      - "&7Click to change"
+    filter-status-all: "All"
+    filter-status-active: "Active"
+    filter-status-stored: "Stored"
+    filter-status-dead: "Dead"
+    filter-type-name: "&eType: &f%value%"
+    filter-type-lore:
+      - "&7Click to change"
+    filter-type-all: "All"
+    sort-name: "&eSort: &f%value%"
+    sort-lore:
+      - "&7Click to change"
+    sort-level: "Level"
+    sort-alpha: "Name"
+    sort-xp: "XP"
+    no-matches: "&7No pets match this filter."
+    info-name: "&6WildTame &7— Pets"
+    info-lore:
+      - "&7Tame, train and evolve"
+      - "&7wild companions."
+      - ""
+      - "&7Total pets: &f%total%"
+      - "&7Page: &f%page%/%total-pages%"
+  rename:
+    title: "&8Rename Pet"
+    invalid-name: "&cYou didn't type a valid name."
+  inventory:
+    title: "&8Inventory: %name%"
+
+taming:
+  collar-name: "&6Taming Collar"
+  collar-lore:
+    - "&7Wear it in your off hand"
+    - "&7to start taming"
+    - "&7a pet."
+    - "&8Without it, taming is 100% vanilla."
+  collar-broke: "&7Your Taming Collar broke after use."
+  progress-bar-title: "&eTaming %type%..."
+
+treat:
+  name: "&dPet Treat"
+  lore:
+    - "&7Give this to your active pet"
+    - "&7for &d+%amount% XP&7 straight away."
+    - "&8Golden carrot + bone + berries"
+
+pet:
+  fallback-name: "your pet"
+  ready-to-revive-on-join: "&a%name% can be revived now — open it from /wildtame menu."
+  already-have-active: "&cYou already have an active pet. Store it first from /wildtame menu."
+  tamed: "&aYou tamed %name%!"
+  no-pets-registered: "&7No pets have been registered yet."
+  top-header: "&6&lTop %limit% Pets &7(by level)"
+  top-entry: "%rank% &f%name%%evolved-mark% &7(%type%) &7owned by &f%owner% &b— Lv. %level%%max-suffix%"
+  top-evolved-mark: " &d★"
+  top-max-suffix: " &6(MAX)"
+  leveled-up: "&bYour pet %name% reached level %level%!"
+  max-level-reached: "&6&l%name% reached the max level (%max-level%)!"
+  fed: "&7You fed %name%."
+  already-max-level: "&7%name% is already at the max level (%max-level%)."
+  treat-given: "&dYou gave %name% a treat. (+%amount% XP)"
+  parrot-alert: "&c⚠ &f%name% &7senses a hostile mob nearby"
+  no-active-pet-to-store: "&cYou don't have an active pet."
+  stored: "&7You stored %name%. Use /wildtame menu to get it back."
+  no-pets-stored: "&cYou don't have any stored pets."
+  not-found-by-name: "&cYou don't have a stored pet with that name. Use /wildtame menu to see them."
+  still-reviving: "&cIt's still reviving. Wait %time%."
+  could-not-summon: "&cCouldn't summon your pet."
+  revived: "&a%name% has revived!"
+  summoned: "&a%name% is back!"
+  no-active-pet-to-release: "&cYou don't have an active pet to release."
+  released: "&7You released %name%. It's no longer your pet."
+  died: "&cYour pet %name% died! You'll be able to revive it in %time% from /wildtame menu."
+  name-taken: "&cYou already have another pet named %name%. Choose a different name."
+  renamed: "&aYour pet is now named %name%."
+  call-cooldown: "&cYou must wait %seconds%s before calling your pet again."
+  world-not-found: "&cCouldn't find your pet's world."
+  call-success: "&aYour pet is back!"
+  call-not-found: "&cCouldn't locate your pet. It may have been lost."
+  no-chest-allowed: "&cThis pet doesn't carry a chest — use its own inventory (sneak + right click)."
+
+command:
+  no-permission: "&cYou don't have permission to use this command."
+  players-only: "This command can only be used in-game."
+  no-active-pet-hint: "&cYou don't have an active pet yet. Ask an admin for the Taming Collar."
+  usage-admin: "&7Usage: /wildtame admin <reload|nivel|limpiar>"
+  usage-level: "&7Usage: /wildtame admin nivel <player> <petName> <number>"
+  usage-rename: "&7Usage: /wildtame renombrar <name>"
+  unknown-subcommand: "&cUnknown subcommand."
+  reload-done: "&aconfig.yml and messages.yml reloaded — the changes are now active."
+  player-not-found: "&cPlayer not found or offline."
+  admin-received-collar: "&aYou received a &6Taming Collar&a in your inventory."
+  admin-received-treat: "&aYou received a &dPet Treat&a in your inventory."
+  admin-no-space: "&cYou don't have room in your inventory."
+  cleanup-done: "&aRemoved %count% ghost pet(s)."
+  level-not-a-number: "&cThe level must be a number."
+  pet-not-found-for-level: "&c%player% doesn't have any pet (active or stored) with that name."
+  level-set-admin: "&aSet %pet% (owned by %player%) to level %level%."
+  level-set-target: "&bYour pet %pet% is now level %level%! (set by an admin)"
+  help-title: "&6&lWildTame &7- Commands"
+  help-main-line: "&7Main command: &e/wt menu"
+  help-info-line: "&e/wt info &8- &7Your active pet's panel"
+  help-llamar-line: "&e/wt llamar &8- &7Teleports your active pet to you"
+  help-renombrar-line: "&e/wt renombrar <name> &8- &7Renames your active pet"
+  help-top-line: "&e/wt top &8- &7Global pet leaderboard"
+  help-admin-reload-line: "&c/wt admin reload &8- &7Reloads config.yml and the languages"
+  help-admin-nivel-line: "&c/wt admin nivel <player> <pet> <level> &8- &7Sets that pet's level"
+  help-admin-limpiar-line: "&c/wt admin limpiar &8- &7Removes ghost pets"

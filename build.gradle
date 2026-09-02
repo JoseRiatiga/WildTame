@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.example.wildtame'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'papermc'
+        url = 'https://repo.papermc.io/repository/maven-public/'
+    }
+    maven {
+        name = 'placeholderapi'
+        url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
+    }
+}
+
+dependencies {
+    // Provided by the server at runtime, not bundled into our jar
+    compileOnly 'io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT'
+    // Opcional: solo se usa si el server tiene PlaceholderAPI instalado (ver softdepend en
+    // plugin.yml y el chequeo en tiempo de ejecución en WildTame#registerPlaceholderApiIfPresent).
+    compileOnly 'me.clip:placeholderapi:2.11.6'
+}
+
+tasks.named('compileJava') {
+    options.encoding = 'UTF-8'
+}
+
+// Copies the built plugin jar into run/plugins and launches a local Paper test server
+tasks.register('runServer', JavaExec) {
+    dependsOn tasks.named('jar')
+    doFirst {
+        copy {
+            from tasks.named('jar').get().archiveFile
+            into layout.projectDirectory.dir('run/plugins')
+        }
+    }
+    workingDir = layout.projectDirectory.dir('run')
+    classpath = files(layout.projectDirectory.file('run/paper.jar'))
+    args = ['--nogui']
+    standardInput = System.in
+}

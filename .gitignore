@@ -1,0 +1,13 @@
+# Gradle
+.gradle/
+build/
+
+# IDE
+.idea/
+*.iml
+
+# Local test server (downloaded Paper jar, world saves, logs — not part of the plugin source)
+run/
+
+# Logs
+*.log
