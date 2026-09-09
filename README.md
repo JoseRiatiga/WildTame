@@ -14,6 +14,20 @@ A fully customizable pet-taming and progression plugin for Paper servers. Tame w
 - **Config-driven balance** — level cap, XP rates, cooldowns, ability unlock levels, and every attribute bonus are all set in `config.yml`, reloadable with `/wildtame admin reload`.
 - **PlaceholderAPI support**, automatic `pets.yml` backups, and a ghost-pet cleanup command for admins.
 
+## How to tame each species
+
+Equip the **Taming Collar** in your off-hand first (craft one, or have an admin give you one from the Admin Panel). Taming isn't guaranteed on the first try.
+
+| Species | How to tame |
+|---|---|
+| Wolf | Feed it a bone |
+| Cat | Feed it raw fish |
+| Parrot | Feed it seeds |
+| Horse / Donkey / Mule | Mount and ride it repeatedly |
+| Llama | Mount and ride it repeatedly |
+
+Once tamed, level it up by fighting near it or feeding it a crafted **Pet Treat** (golden carrot + bone + berries) for instant XP.
+
 ## Requirements
 
 | Requirement | Value |
